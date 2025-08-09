@@ -229,4 +229,4 @@ A full-stack notes taking application built with Next.js frontend and Flask back
 ![Login Page](Images/TextEditor.png)
 
 ### Account Page
-![Login Page](Images/accounts.png)
+![Accounts Page](Images/acconts.png)
