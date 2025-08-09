@@ -218,3 +218,15 @@ A full-stack notes taking application built with Next.js frontend and Flask back
 
 ### Login Page
 ![Login Page](Images/login.png)
+
+### Signup Page
+![Signup Page](Images/register.png)
+
+### Notes Page
+![Notes Page](Images/Tasks.png)
+
+### TextEditor Page
+![Login Page](Images/TextEditor.png)
+
+### Account Page
+![Login Page](Images/accounts.png)
