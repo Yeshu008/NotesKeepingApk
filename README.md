@@ -212,3 +212,9 @@ A full-stack notes taking application built with Next.js frontend and Flask back
 - Optimized SQL queries with SQLAlchemy
 - Connection pooling
 - Proper HTTP caching headers
+
+
+
+
+### Login Page
+![Login Page](Images/login.png)
