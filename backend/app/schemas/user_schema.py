@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, root_validator
+from pydantic import BaseModel, EmailStr, root_validator,constr
 
 class UserSignUpSchema(BaseModel):
     user_name: str
@@ -28,3 +28,12 @@ class UserSignInSchema(BaseModel):
 
     class Config:
         str_strip_whitespace = True
+
+class UserUpdateSchema(BaseModel):
+    user_name: constr(strip_whitespace=True, min_length=1, max_length=100) | None = None
+    user_email: EmailStr | None = None
+
+    class Config:
+        str_strip_whitespace = True        
+
+
