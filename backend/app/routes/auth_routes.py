@@ -73,3 +73,22 @@ def refresh():
     new_access_token = create_access_token(identity=current_user_id)
     return jsonify({'access_token': new_access_token}), 200
 
+@auth_bp.route('/api/auth/me', methods=['GET'])
+@jwt_required()
+def get_current_user():
+    current_user_id = get_jwt_identity()
+    user = User.query.filter_by(user_id=current_user_id).first()
+    if not user:
+        return jsonify({'error': 'User not found'}), 404
+    return jsonify({
+        'user_id': user.user_id,
+        'user_name': user.user_name,
+        'user_email': user.user_email
+    }), 200
+
+@auth_bp.route('/logout', methods=['POST'])
+@jwt_required()
+def logout():
+    jti = get_jwt()['jti']
+    current_app.blacklisted_tokens.add(jti)
+    return jsonify({'message': 'Successfully logged out'}), 200
